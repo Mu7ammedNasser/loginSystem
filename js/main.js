@@ -37,41 +37,40 @@ if (signUpButton) {
 }
 
 function addNewClient() {
-  
-    var clientInfo = {
-      clientName: clientNameUpInput.value,
-      clientEmail: clientEmailUpInput.value,
-      clientPassword: clientPasswordUpInput.value,
-    };
-    if (
-      clientInfo.clientName == "" ||
-      clientInfo.clientEmail == "" ||
-      clientInfo.clientPassword == ""
-    ) {
-      return 1;
-    }
-
-    for (var i = 0; i < clientList.length; i++) {
-      if (clientInfo.clientEmail === clientList[i].clientEmail) {
-        return 0;
-      }
-    }
-
-    clientList.push(clientInfo);
-    localStorage.setItem("clients", JSON.stringify(clientList));
-    return 2;
+  var clientInfo = {
+    clientName: clientNameUpInput.value,
+    clientEmail: clientEmailUpInput.value,
+    clientPassword: clientPasswordUpInput.value,
+  };
+  if (
+    clientInfo.clientName == "" ||
+    clientInfo.clientEmail == "" ||
+    clientInfo.clientPassword == ""
+  ) {
+    return 1;
   }
-    
-  
 
+  for (var i = 0; i < clientList.length; i++) {
+    if (clientInfo.clientEmail === clientList[i].clientEmail) {
+      return 0;
+    }
+  }
+
+  clientList.push(clientInfo);
+  localStorage.setItem("clients", JSON.stringify(clientList));
+  return 2;
+}
 
 var signInButton = document.querySelector("#signInButton");
+var propmptlogin = document.getElementById("validationlogin");
 if (signInButton) {
   signInButton.addEventListener("click", function () {
     if (validLogin()) {
       window.location.href = "home.html";
     } else {
-      alert("wrong email or password");
+      if (propmptlogin) {
+        propmptlogin.innerHTML = "wrong email or password";
+      }
     }
   });
 }
