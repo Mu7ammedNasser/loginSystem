@@ -1,0 +1,148 @@
+:root {
+  --main-color:  #326e44;
+  /* --main-color:  #4166cc; */
+  --main-color-light: #7689be;
+  --main-duration: 0.5s;
+}
+
+body {
+  background-color: #f3f3f3;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  url(../media/pexels-ella-olsson-572949-1640777.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.form-control:focus {
+    border-color: var(--main-color) !important;
+    box-shadow: 0px 0px 0px 2px var(--main-color-light) !important;
+}
+
+.form-title {
+  color: white;
+}
+/*start index page */
+
+.light-box {
+  background-color: rgba(0, 0, 0, 0.726);
+  box-shadow: 0px 0px 15px var(--main-color);
+  width: 55%;
+  }
+  
+  @media (max-width:  767px) {
+    .light-box {
+      width: 80% !important;
+      height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 55%;
+}
+}
+@media (max-width: px) {
+  .light-box {
+    width: 80% !important;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+}
+}
+.welcome-page .light-box .market-title {
+  background-color: white;
+  color: var(--main-color);
+  width: 180px;
+  height: 180px;
+  text-shadow: 1px 1px 2px var(--main-color);
+  box-shadow: 0px 0px 10px var(--main-color);
+  transition: var(--main-duration);
+}
+
+@media (min-width: 767px) {
+  .welcome-page .light-box .market-title {
+    
+    animation: upsandowns 2s infinite;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  }
+}
+.welcome-page .light-box .market-title:hover {
+  background-color: transparent;
+  color: white;
+}
+
+@keyframes upsandowns {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+  
+}
+
+.sign-up {
+  background-color: var(--main-color);
+  color: white;
+  transition: var(--main-duration);
+}
+.sign-in {
+  color: var(--main-color);
+  background-color: white;
+  border: 1px solid var(--main-color);
+  transition: var(--main-duration);
+}
+
+.sign-up:hover {
+  background-color: white;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+.sign-in:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.welcome-page .light-box p {
+  color: var(--main-color);
+  color: white;
+}
+
+
+
+
+
+
+
+
+/*end index page */
+
+
+
+/* start sign-up  */
+
+/* end sign-up  */
+
+
+
+
+
+
+
+
+/* start home style  */
+.header {
+    box-shadow: 0px 0px 5px 1px  var(--main-color-light) ;
+}
+.homeContainer {
+    height: calc(100vh - 58px);
+}
+
+.homeContent {
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px 2px var(--main-color);
+}
+
+
+/* end home style  */
